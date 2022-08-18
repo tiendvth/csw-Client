@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<button class="btn btn-primary m-3"><a href="create" style="color: azure">Create New</a></button>
+<div class="row">
+  <table class="table table-dark table-striped-columns col-md-10 text-center">
+    <thead>
+    <tr class="row">
+      <th class="col-md-4"> Name</th>
+      <th class="col-md-4"> Salary</th>
+      <th class="col-md-4"> Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : ${list}" class="row">
+      <td class="col-md-4"><span th:text="${employee.name}"></span></td>
+      <td class="col-md-4"><span th:text="${employee.salary}"></span></td>
+      <td class="col-md-4 align-item-center">
+        <button type="button" class="btn btn-success"><a style="color: azure" th:href="@{/detail?id={id} (id=${employee.id})}">Detail</a></button>
+        <button type="button" class="btn btn-primary"><a style="color: azure" th:href="@{/edit?id={id} (id=${employee.id})}">Edit</a></button>
+        <button type="button" class="btn btn-danger"><a style="color: azure" th:href="@{/deleteUser?id={id} (id=${employee.id})}">Delete</a></button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
