@@ -23,8 +23,8 @@ import java.util.logging.Logger;
 @Controller
 public class EmployeeController {
 
-    private final String REST_API_LIST = "http://localhost:8080/employees";
-    private final String REST_API_CREATE = "http://localhost:8080/add";
+    private final String REST_API_LIST = "http://localhost:8080/employee";
+    private final String REST_API_CREATE = "http://localhost:8080/create";
     private final String REST_API_UPDATE = "http://localhost:8080/update/{id}";
     private final String REST_API_GET_ID = "";
 
